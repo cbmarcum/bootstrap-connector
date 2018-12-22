@@ -7,8 +7,8 @@ repositories {
     mavenCentral()
 }
 
-group 'org.openoffice'
-version '0.1.1'
+group 'net.codebuilders'
+version '4.1.6.0' // based on AOO version and patch number
 description 'bootstrap-connector allows bootstrapping Apache OpenOffice by filepath'
 mainClassName = 'ooo.connector.example.BootstrapSocketConnectorExample'
 
@@ -18,10 +18,10 @@ targetCompatibility = "1.6"
 sourceCompatibility = "1.6"
 
 dependencies {
-    compile 'org.openoffice:juh:4.1.2'
-    compile 'org.openoffice:ridl:4.1.2'
-    compile 'org.openoffice:unoil:4.1.2'
-    compile 'org.openoffice:jurt:4.1.2'
+    compile 'net.codebuilders:juh:4.1.6'
+    compile 'net.codebuilders:ridl:4.1.6'
+    compile 'net.codebuilders:unoil:4.1.6'
+    compile 'net.codebuilders:jurt:4.1.6'
 }
 
 archivesBaseName = 'bootstrap-connector'
@@ -57,9 +57,12 @@ uploadArchives {
             inceptionYear '2016'
 
             scm {
-                url 'http://svn.apache.org/repos/asf/openoffice/devtools/bootstrap-connector/trunk'
-                developerConnection 'https://svn.apache.org/repos/asf/openoffice/devtools/bootstrap-connector/trunk'
-                connection 'http://svn.apache.org/repos/asf/openoffice/devtools/bootstrap-connector/trunk'
+                // url 'http://svn.apache.org/repos/asf/openoffice/devtools/bootstrap-connector/trunk'
+                // developerConnection 'https://svn.apache.org/repos/asf/openoffice/devtools/bootstrap-connector/trunk'
+                // connection 'http://svn.apache.org/repos/asf/openoffice/devtools/bootstrap-connector/trunk'
+                url 'https://github.com/cbmarcum/bootstrap-connector'
+                developerConnection 'https://github.com/cbmarcum/bootstrap-connector'
+                connection 'https://github.com/cbmarcum/bootstrap-connector'
             }
 
             licenses {
@@ -79,7 +82,15 @@ uploadArchives {
                     // organization 'Apache Software Foundation'
                     organization = 'Apache Software Foundation' // <-- note we use assignment here
                     organizationUrl 'http://www.apache.org'
-
+                }
+                developer {
+                    name 'Carl Marcum'
+                    email 'carl.marcum@codebuilders.net'
+                    url 'http://codebuilders.net'
+                    // see: http://www.mail-archive.com/user@gradle.codehaus.org/msg05368.html
+                    // organization 'Code Builders, LLC'
+                    organization = 'Code Builders, LLC' // <-- note we use assignment here
+                    organizationUrl 'http://codebuilders.net'
                 }
             }
         }
